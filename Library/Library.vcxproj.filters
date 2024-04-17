@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\Infrastructure">
+      <UniqueIdentifier>{ccbbc922-5fa5-4ace-b138-ce276cdf4a6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Infrastructure\Persistend">
+      <UniqueIdentifier>{05f1f8a7-66f7-4938-851b-ad26d93f8569}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Utils">
+      <UniqueIdentifier>{6cf8c9b5-8c0b-473b-8e94-aeff0d3540f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Infrastructure\Persistend\Initialization">
+      <UniqueIdentifier>{59866dcd-b358-448a-ba26-60fc8820a829}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Infrastructure\Persistend\Initialization\SQL">
+      <UniqueIdentifier>{03fb0a5f-41d3-4d85-aa81-d285c8d0ad73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Infrastructure\Persistend\Repositories">
+      <UniqueIdentifier>{60cca424-30a3-4480-b7e5-64c3c2ff669c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Infrastructure\Persistend\Repositories\SQL">
+      <UniqueIdentifier>{54c38623-385b-4e67-8c9e-bcf08cd61321}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Library.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="execSql.cpp">
+      <Filter>Исходные файлы\Infrastructure\Persistend\Initialization</Filter>
+    </ClCompile>
+    <ClCompile Include="GetDb.cpp">
+      <Filter>Исходные файлы\Infrastructure\Persistend\Initialization</Filter>
+    </ClCompile>
+    <ClCompile Include="BookRepository.cpp">
+      <Filter>Исходные файлы\Infrastructure\Persistend\Repositories</Filter>
+    </ClCompile>
+    <ClCompile Include="fromFile.cpp">
+      <Filter>Исходные файлы\Utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Book.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="BookLoan.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Genre.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="execSql.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="GetDb.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="BookRepository.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="fromFile.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="book_genre.sql">
+      <Filter>Исходные файлы\Infrastructure\Persistend\Initialization\SQL</Filter>
+    </None>
+    <None Include="book_loans.sql">
+      <Filter>Исходные файлы\Infrastructure\Persistend\Initialization\SQL</Filter>
+    </None>
+    <None Include="books.sql">
+      <Filter>Исходные файлы\Infrastructure\Persistend\Initialization\SQL</Filter>
+    </None>
+    <None Include="clients.sql">
+      <Filter>Исходные файлы\Infrastructure\Persistend\Initialization\SQL</Filter>
+    </None>
+    <None Include="genres.sql">
+      <Filter>Исходные файлы\Infrastructure\Persistend\Initialization\SQL</Filter>
+    </None>
+    <None Include="BookInsert.sql">
+      <Filter>Исходные файлы\Infrastructure\Persistend\Repositories\SQL</Filter>
+    </None>
+  </ItemGroup>
+</Project>
