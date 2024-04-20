@@ -1,17 +1,18 @@
 #include "fromFile.h"
-void fromFile(const string& path, char* res) {
-
-    ifstream file(path);
+void fromFile(const string& path, char* res, size_t size) {
+    ifstream file(path, ios::binary); // Открываем файл в двоичном режиме для правильного чтения бинарных данных
     if (file.is_open()) {
-        streamsize size = file.tellg();
-        file.seekg(0, ios::beg);
-        file.read(res, size);
-        res[size] = '\0';
+        file.seekg(0, ios::end); // Перемещаем курсор в конец файла
+        streamsize fileSize = file.tellg(); // Получаем размер файла
+        if (fileSize > size) {
+            throw runtime_error("Buffer is too small to hold file content");
+        }
+        file.seekg(0, ios::beg); // Возвращаем курсор в начало файла
+        file.read(res, fileSize); // Читаем содержимое файла в массив res
+        res[fileSize] = '\0'; // Добавляем нуль-терминатор в конец массива
         file.close();
     }
     else {
-        char temp[1024];
-        strcpy_s(temp, path.c_str());
-        throw exception(temp);
+        throw runtime_error("Failed to open file");
     }
 }

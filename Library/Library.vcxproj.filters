@@ -30,6 +30,9 @@
     <Filter Include="Исходные файлы\Infrastructure\Persistend\Repositories\SQL">
       <UniqueIdentifier>{54c38623-385b-4e67-8c9e-bcf08cd61321}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Application">
+      <UniqueIdentifier>{b270e74d-e9e9-4013-bd5d-3720ea6901c8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library.cpp">
@@ -46,6 +49,12 @@
     </ClCompile>
     <ClCompile Include="fromFile.cpp">
       <Filter>Исходные файлы\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="GenreRepository.cpp">
+      <Filter>Исходные файлы\Infrastructure\Persistend\Repositories</Filter>
+    </ClCompile>
+    <ClCompile Include="BookService.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +80,12 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="fromFile.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="GenreRepository.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="BookService.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

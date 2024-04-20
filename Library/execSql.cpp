@@ -1,36 +1,37 @@
 #include "execSql.h"
 
-using namespace std;
 namespace DB {
-    QueryError::QueryError(const char* msg) : std::exception(msg) {}
-    QueryError::QueryError() : std::exception() {}
 
-    void execSql(const string& path, sqlite3* db) {
-        char* zErrMsg = 0;
-        char query[4096];
-        try {
-            fromFile(path, query);
-        }
-        catch (exception e) {
-            throw QueryError(e.what());
-        }
+    void execFile(const string& path, sqlite3* db) {
+        char* zErrMsg;
+        const int bufferSize = 4096;
+        char query[bufferSize];
+
+        fromFile(path, query, bufferSize);
+
         int rc = sqlite3_exec(db, query, 0, 0, &zErrMsg);
         if (rc) {
             cout << zErrMsg << endl;
-            throw QueryError(zErrMsg);
+            throw exception(path.c_str());
             sqlite3_free(zErrMsg);
         }
     }
 
-    void execManySQL(const vector<string>& paths, sqlite3* db, vector<QueryError>* errors) {
+    void execManyFiles(const vector<string>& paths, sqlite3* db) {
+        vector<exception> errors;
         for (auto& path : paths) {
             try {
-                execSql(path, db);
-            } catch (QueryError& err) {
-                if (errors) errors->push_back(err);
+                execFile(path, db);
+            } catch (exception err) {
+                errors.push_back(err);
             }
         }
+        for (auto error : errors) {
+            cout << "sql file: " << error.what() << endl;
+        }
+        throw runtime_error("")
     }
+
 }
 
 

@@ -132,8 +132,10 @@
       <FileType>Document</FileType>
     </None>
     <ClCompile Include="BookRepository.cpp" />
+    <ClCompile Include="BookService.cpp" />
     <ClCompile Include="execSql.cpp" />
     <ClCompile Include="fromFile.cpp" />
+    <ClCompile Include="GenreRepository.cpp" />
     <ClCompile Include="GetDb.cpp" />
     <ClCompile Include="Library.cpp" />
   </ItemGroup>
@@ -141,10 +143,12 @@
     <ClInclude Include="Book.h" />
     <ClInclude Include="BookLoan.h" />
     <ClInclude Include="BookRepository.h" />
+    <ClInclude Include="BookService.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="execSql.h" />
     <ClInclude Include="fromFile.h" />
     <ClInclude Include="Genre.h" />
+    <ClInclude Include="GenreRepository.h" />
     <ClInclude Include="GetDb.h" />
   </ItemGroup>
   <ItemGroup>

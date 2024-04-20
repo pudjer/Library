@@ -9,3 +9,4 @@ INSERT INTO genres (name, description) VALUES
     ('Romance', 'Narratives centered around love, affection, or romantic relationships between characters.'),
     ('Science Fiction', 'Works exploring speculative concepts, often set in futuristic or technological settings.'),
     ('Thriller', 'Entertainment intended to provoke excitement, tension, and anticipation, often involving suspenseful plots and unexpected twists.');
+select * from genres;

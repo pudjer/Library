@@ -1,23 +1,20 @@
 #pragma once
 #include <sqlite3.h>
-#include "Book.h"
+#include "Genre.h"
 #include <iostream>
 using namespace std;
 using namespace Model;
 
 
 namespace Repositories {
-	class BookRepository
+	class GenreRepository
 	{
 	private:
 		sqlite3* db;
 	public:
-		BookRepository(sqlite3* dataBase);
-		Book getBook(int id);
-		void saveBook(Book* book);
-
-
+		GenreRepository(sqlite3* dataBase);
+		Genre getGenre(char* name);
+		void saveGenre(Genre* genre);
 	};
 }
-
 

@@ -9,14 +9,11 @@
 using namespace std;
 namespace DB {
 
-    class QueryError : public exception {
-    public:
-        QueryError(const char* msg);
-        QueryError();
-    };
+    typedef int (*CallbackType)(void*, int, char**, char**);
+    void execSql(const char* query, sqlite3* db, CallbackType cb);
 
 
-    void execSql(const string& path, sqlite3* db);
+    void execFile(const string& path, sqlite3* db);
 
-    void execManySQL(const vector<string>& paths, sqlite3* db, vector<QueryError>* errors = nullptr);
+    void execManyFiles(const vector<string>& paths, sqlite3* db);
 }

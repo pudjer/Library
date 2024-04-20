@@ -15,12 +15,11 @@ namespace DB {
             "genres.sql",
         };
         int rc;
-        vector<QueryError> initErrors;
         rc = sqlite3_open("example.db", &db);
         if (rc) {
             throw ConnectionError(sqlite3_errmsg(db));
         }
-        execManySQL(paths, db, &initErrors);
+        execManyFiles(paths, db);
 
         return db;
     }
