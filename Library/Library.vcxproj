@@ -128,9 +128,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="BookInsert.sql">
-      <FileType>Document</FileType>
-    </None>
     <ClCompile Include="BookRepository.cpp" />
     <ClCompile Include="BookService.cpp" />
     <ClCompile Include="execSql.cpp" />
@@ -144,12 +141,14 @@
     <ClInclude Include="BookLoan.h" />
     <ClInclude Include="BookRepository.h" />
     <ClInclude Include="BookService.h" />
+    <ClInclude Include="BookWithGenres.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="execSql.h" />
     <ClInclude Include="fromFile.h" />
     <ClInclude Include="Genre.h" />
     <ClInclude Include="GenreRepository.h" />
     <ClInclude Include="GetDb.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="books.sql">
@@ -167,6 +166,9 @@
     <None Include="genres.sql">
       <FileType>Document</FileType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Library.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

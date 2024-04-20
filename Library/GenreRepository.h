@@ -13,8 +13,8 @@ namespace Repositories {
 		sqlite3* db;
 	public:
 		GenreRepository(sqlite3* dataBase);
-		Genre getGenre(char* name);
-		void saveGenre(Genre* genre);
+		Genre getGenre(const char* name);
+		void saveGenre(const Genre* genre);
 	};
 }
 

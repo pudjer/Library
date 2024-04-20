@@ -12,7 +12,6 @@ namespace DB {
         int rc = sqlite3_exec(db, query, 0, 0, &zErrMsg);
         if (rc) {
             cout << zErrMsg << endl;
-            throw exception(path.c_str());
             sqlite3_free(zErrMsg);
         }
     }
@@ -29,7 +28,7 @@ namespace DB {
         for (auto error : errors) {
             cout << "sql file: " << error.what() << endl;
         }
-        throw runtime_error("")
+        throw runtime_error("error during exec of sql files");
     }
 
 }

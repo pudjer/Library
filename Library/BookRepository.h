@@ -13,8 +13,8 @@ namespace Repositories {
 		sqlite3* db;
 	public:
 		BookRepository(sqlite3* dataBase);
-		Book getBook(int id);
-		void saveBook(Book* book);
+		virtual Book getBookById(int id);
+		virtual void saveBook(const Book* book);
 
 
 	};

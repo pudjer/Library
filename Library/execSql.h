@@ -9,9 +9,6 @@
 using namespace std;
 namespace DB {
 
-    typedef int (*CallbackType)(void*, int, char**, char**);
-    void execSql(const char* query, sqlite3* db, CallbackType cb);
-
 
     void execFile(const string& path, sqlite3* db);
 

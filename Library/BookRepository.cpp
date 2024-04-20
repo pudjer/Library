@@ -1,4 +1,5 @@
 #include "BookRepository.h"
+#include "GenreRepository.h"
 using namespace Model;
 
 namespace Repositories {
@@ -6,7 +7,7 @@ namespace Repositories {
 	{
 		db = dataBase;
 	};
-    Book BookRepository::getBook(int id) {
+    Book BookRepository::getBookById(int id) {
         string bookQuery = "SELECT id, title, author, year, count FROM books WHERE id = ?;";
         sqlite3_stmt* stmt;
 
@@ -36,9 +37,12 @@ namespace Repositories {
         }
 
         sqlite3_finalize(stmt);
+
+
+
         return book;
     }
-    void BookRepository::saveBook(Book* book) {
+    void BookRepository::saveBook(const Book* book) {
         const char* err;
         sqlite3_stmt* stmt;
         // Check if the book already exists in the database by checking its ID
@@ -80,10 +84,17 @@ namespace Repositories {
             cout << err;
             throw runtime_error("Failed to execute save query: " + string(err));
         }
+        GenreRepository genreRepo(db);
+        for (auto genre : book->genres) {
+            Genre* genrePtr = &genre;
+            genreRepo.saveGenre(genrePtr);
+            
+        }
 
         sqlite3_finalize(stmt); // Finalize statement to release resources
         stmt = nullptr; // Reset statement handle
     }
+
 }
 
 
