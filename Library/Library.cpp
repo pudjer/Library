@@ -19,11 +19,18 @@ int main() {
     Repositories::BookRepository bookRepo(db);
 
 
-    Book book{ "meme", "down", 2022, 3};
+    Book book{ "meme", "down", 2022, 3, 1};
     Genre genre{ "porno", "sex" };
+    book.genres.push_back(genre);
     bookRepo.saveBook(&book);
-    bookRepo.getBookById(1);
-    cout << book.title << book.author << book.year << book.count;
+    book = bookRepo.getBookById(3);
+    cout << book.title << endl;
+    cout << book.author << endl;
+    cout << book.year << endl;
+    cout << book.count << endl;
+    for (auto genrea : book.genres) {
+        cout << genrea.name << endl;
+    }
     return 0;
 
 }

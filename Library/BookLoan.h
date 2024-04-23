@@ -5,12 +5,12 @@
 
 namespace Model {
     struct BookLoan {
-        int id;
         std::string dateOfIssue;
         std::string dateOfReturn;
         Book book;
         Client client;
         bool canceled;
+        int id = 0;
     };
 }
 

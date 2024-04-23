@@ -25,10 +25,12 @@ namespace DB {
                 errors.push_back(err);
             }
         }
-        for (auto error : errors) {
-            cout << "sql file: " << error.what() << endl;
+        if (errors.size()) {
+            for (auto error : errors) {
+                cout << "sql file: " << error.what() << endl;
+            }
+            throw runtime_error("error during exec of sql files");
         }
-        throw runtime_error("error during exec of sql files");
     }
 
 }

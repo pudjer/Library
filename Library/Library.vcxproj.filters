@@ -33,13 +33,22 @@
     <Filter Include="Исходные файлы\Application">
       <UniqueIdentifier>{b270e74d-e9e9-4013-bd5d-3720ea6901c8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Repositories">
+      <UniqueIdentifier>{b4cfb27d-315b-4c54-98f0-961359d14451}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Models">
+      <UniqueIdentifier>{2b9ca2dc-c5ba-4b6a-abfe-90a87e23b3fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Services">
+      <UniqueIdentifier>{2ddac13a-8f92-4922-8e78-1acda30ecf33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Utils">
+      <UniqueIdentifier>{4598b838-7116-4ed0-a7e0-01cee6e5c929}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library.cpp">
       <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="execSql.cpp">
-      <Filter>Исходные файлы\Infrastructure\Persistend\Initialization</Filter>
     </ClCompile>
     <ClCompile Include="GetDb.cpp">
       <Filter>Исходные файлы\Infrastructure\Persistend\Initialization</Filter>
@@ -56,37 +65,55 @@
     <ClCompile Include="BookService.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="ClientRepository.cpp">
+      <Filter>Исходные файлы\Infrastructure\Persistend\Repositories</Filter>
+    </ClCompile>
+    <ClCompile Include="BookLoanRepository.cpp">
+      <Filter>Исходные файлы\Infrastructure\Persistend\Repositories</Filter>
+    </ClCompile>
+    <ClCompile Include="execSql.cpp">
+      <Filter>Исходные файлы\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Book.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="BookLoan.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Client.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Genre.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="execSql.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="GetDb.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="BookRepository.h">
+    <ClInclude Include="resource.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="fromFile.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="BookLoanRepository.h">
+      <Filter>Файлы заголовков\Repositories</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientRepository.h">
+      <Filter>Файлы заголовков\Repositories</Filter>
+    </ClInclude>
+    <ClInclude Include="BookRepository.h">
+      <Filter>Файлы заголовков\Repositories</Filter>
     </ClInclude>
     <ClInclude Include="GenreRepository.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Repositories</Filter>
+    </ClInclude>
+    <ClInclude Include="Book.h">
+      <Filter>Файлы заголовков\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="BookLoan.h">
+      <Filter>Файлы заголовков\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>Файлы заголовков\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Genre.h">
+      <Filter>Файлы заголовков\Models</Filter>
     </ClInclude>
     <ClInclude Include="BookService.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="execSql.h">
+      <Filter>Файлы заголовков\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="fromFile.h">
+      <Filter>Файлы заголовков\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -105,8 +132,8 @@
     <None Include="genres.sql">
       <Filter>Исходные файлы\Infrastructure\Persistend\Initialization\SQL</Filter>
     </None>
-    <None Include="BookInsert.sql">
-      <Filter>Исходные файлы\Infrastructure\Persistend\Repositories\SQL</Filter>
-    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Library.rc" />
   </ItemGroup>
 </Project>

@@ -10,13 +10,19 @@ namespace Repositories {
 	class BookRepository
 	{
 	private:
+		void saveGenres(const Book* book);
 		sqlite3* db;
 	public:
 		BookRepository(sqlite3* dataBase);
-		virtual Book getBookById(int id);
-		virtual void saveBook(const Book* book);
-
-
+		Book getBookById(int id);
+		void saveBook(Book* book);
+		vector<Book> getAllBooks();
+		void deleteBook(int id);
+	};
+	class BookNotFound : exception {
+	public:
+		BookNotFound();
+		BookNotFound(char*);
 	};
 }
 
